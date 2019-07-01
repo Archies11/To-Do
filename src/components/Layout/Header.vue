@@ -20,7 +20,7 @@ export default {
 
     .header a {
         color: #fff;
-        padding-right: 5px;
+        padding-right: 5px; 
     }
 </style>
 
