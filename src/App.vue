@@ -1,54 +1,20 @@
 <template>
   <div id="app">
     <Header />
-    <AddTodo v-on:add-todo="addTodo"/>
-    <Todos v-bind:todos="todos_list" v-on:del-todo="deleteItem"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Header from './components/Layout/Header.vue';
-import Todos from './components/Todos.vue';
-import AddTodo from './components/AddTodo.vue';
-
+import Header from './components/Layout/Header';
 export default {
-  name: 'app',
+  name:"app",
   components: {
-    Header,
-    AddTodo,
-    Todos
-  },
-  data() {
-    return {
-      todos_list: [
-        {
-          id: 1,
-          title: "Todo One",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Todo Two",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "Todo Three",
-          completed: false
-        }
-      ]
-    }
-  },
-  methods: {
-    deleteItem(id) {
-      this.todos_list = this.todos_list.filter(todo => todo.id!== id);
-    },
-    addTodo(newTodo) {
-      this.todos_list = [...this.todos_list, newTodo];
-    }
+    Header
   }
 }
 </script>
+
 
 <style>
 * {
